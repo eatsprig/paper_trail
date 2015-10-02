@@ -101,7 +101,10 @@ module PaperTrail
   end
 
   def self.active_record_protected_attributes?
-    @active_record_protected_attributes ||= ::ActiveRecord::VERSION::MAJOR < 4 || !!defined?(ProtectedAttributes)
+    # original code will require protected_attributes gem which we don't want
+    # @active_record_protected_attributes ||= ::ActiveRecord::VERSION::MAJOR < 4 || !!defined?(ProtectedAttributes)
+
+    @active_record_protected_attributes = false
   end
 
   def self.transaction?
