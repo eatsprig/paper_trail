@@ -144,7 +144,7 @@ end
 unless PaperTrail.active_record_protected_attributes?
   PaperTrail.send(:remove_instance_variable, :@active_record_protected_attributes)
   begin
-    require 'protected_attributes'
+    # require 'protected_attributes'
   rescue LoadError
     # In case `ProtectedAttributes` gem is not available.
   end
